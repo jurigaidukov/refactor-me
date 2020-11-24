@@ -4,12 +4,14 @@ class Notification
 {
     public $adminEmail;
 
-    public function init($adminEmail) {
+    public function init($adminEmail)
+    {
         assert(strlen($adminEmail) > 5);
         $this->adminEmail = $adminEmail;
     }
 
-    public function sendMessageTo($app, $title, $message) {
+    public function sendMessageTo($app, $title, $message)
+    {
         if (!empty($title) && !empty($message)) {
             if ($app == 'discord') {
                 $dis = new DiscordApi;
@@ -25,7 +27,8 @@ class Notification
 
 class DiscordApi
 {
-    public function sendMessage($discordChannel, $discordMessage) {
+    public function sendMessage($discordChannel, $discordMessage)
+    {
         // to be implemented later
     }
 }
