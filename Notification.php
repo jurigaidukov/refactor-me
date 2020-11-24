@@ -27,7 +27,7 @@ class Notification
 
 class DiscordApi
 {
-    public function sendMessage($discordChannel, $discordMessage)
+    public function sendMessage(string $discordChannel, string $discordMessage)
     {
         // to be implemented later
     }
