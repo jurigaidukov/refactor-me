@@ -23,16 +23,3 @@ class Notification
     }
 }
 
-class DiscordApi
-{
-    public function sendMessage($discordChannel, $discordMessage) {
-        // to be implemented later
-    }
-}
-
-$not = new Notification;
-$not->init('developers@example.com');
-$not->sendMessageTo('email', 'my title', 'my message');
-
-$not = new Notification;
-$not->sendMessageTo('discord', 'my title', 'my message');
