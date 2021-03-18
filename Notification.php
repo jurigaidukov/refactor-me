@@ -1,15 +1,15 @@
 <?php
-
+namespace JG\RefactorMe;
 class Notification
 {
     public $adminEmail;
 
-    public function init($adminEmail) {
+    function init($adminEmail) {
         assert(strlen($adminEmail) > 5);
         $this->adminEmail = $adminEmail;
     }
 
-    public function sendMessageTo($app, $title, $message) {
+    public function send_message_to($app, $title, $message) {
         if (!empty($title) && !empty($message)) {
             if ($app == 'discord') {
                 $dis = new DiscordApi;
@@ -32,7 +32,7 @@ class DiscordApi
 
 $not = new Notification;
 $not->init('developers@example.com');
-$not->sendMessageTo('email', 'my title', 'my message');
+$not->send_message_to('email', 'my title', 'my message');
 
 $not = new Notification;
-$not->sendMessageTo('discord', 'my title', 'my message');
+$not->send_message_to('discord', 'my title', 'my message');
